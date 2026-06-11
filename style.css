@@ -3,6 +3,10 @@ body {
     background-color: #fffaf0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar-brand {
     color: #0f766e;
 }
@@ -181,6 +185,23 @@ body {
     background-color: #fffdf6;
     border-left: 5px solid #0f766e;
     border-radius: 8px;
+}
+
+.emergency-picker {
+    border-color: #f59e0b;
+    background-color: #fff7db;
+}
+
+.blog-case {
+    scroll-margin-top: 95px;
+}
+
+.blog-case ol {
+    padding-left: 1.15rem;
+}
+
+.blog-case li + li {
+    margin-top: 0.35rem;
 }
 
 .tool-card a {

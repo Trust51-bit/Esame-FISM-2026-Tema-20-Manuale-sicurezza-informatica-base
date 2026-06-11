@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Nota da dietro le quinte: la navbar resta corta per un motivo semplice. In un sito didattico i link devono accompagnare, non fare rumore. -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Sicurezza Base</a>
@@ -37,8 +36,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero iniziale: qui il tema deve arrivare subito, la semplicità vince sempre. -->
     <header class="hero-section">
         <img src="assets/immagini/sicurezza-informatica-hero.png" class="hero-image" alt="Illustrazione sulla sicurezza informatica">
         <div class="hero-overlay">
@@ -69,7 +66,6 @@
     </header>
 
     <main>
-        <!-- Qui presento il progetto senza gonfiarlo troppo: tre pagine, dati locali e consigli pratici. Il classico lavoro che funziona meglio quando resta chiaro. -->
         <section class="container my-5">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6">
@@ -130,41 +126,126 @@
             </div>
         </section>
 
-        <!-- Qui faccio scegliere il livello della spiegazione: non tutti vogliono leggere parole tecniche appena aprono la pagina, e ci sta. -->
-        <section id="scegli-linguaggio" class="container my-5">
+        <section id="blog-pronto-soccorso" class="container my-5">
             <div class="row g-4 align-items-start">
                 <div class="col-lg-4">
-                    <p class="badge text-bg-warning mb-3">Scegli come leggere</p>
-                    <h2 class="fw-bold">Che tipo di utente sei?</h2>
+                    <p class="badge text-bg-warning mb-3">Pronto intervento PC</p>
+                    <h2 class="fw-bold">Scegli il problema e vai subito alla soluzione</h2>
                     <p>
-                        Se usi il computer per mail, banca, scuola o famiglia, parti tranquillo da qui.
-                        Se invece vuoi vedere cosa succede dietro le quinte, il bottone esperto ti porta direttamente nell'area tecnica.
-                        Zero gara. Qui nessuno distribuisce medaglie, al massimo password migliori. 
+                        Capita a tutti: un popup strano, il PC lentissimo, una mail che mette fretta. Qui scegli la casistica
+                        e arrivi dritto al punto, senza attraversare mezzo sito con la faccia da "perché proprio oggi?".
                     </p>
                     <div class="note-box">
-                        <em>Nota da studente:</em> a volte basta cambiare linguaggio per capire davvero una cosa. Non è barare, è studiare meglio. E risparmiare qualche mal di testa, che male non fa.
+                        <em>Promemoria veloce:</em> se qualcosa ti sembra sospetto, fermati prima di cliccare. Il click impulsivo lasciamolo ai videogiochi, che almeno lì c'è il tasto pausa.
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="row g-4">
-                        <!-- Versione per chi non programma: esempi di casa, pochi termini tecnici e consigli che si capiscono subito. -->
-                        <div class="col-md-10">
-                            <article class="card h-100">
+                    <div class="card emergency-picker">
+                        <div class="card-body">
+                            <label class="form-label fw-bold" for="casistica-pc">Che cosa sta succedendo?</label>
+                            <select class="form-select form-select-lg" id="casistica-pc" onchange="if (this.value) window.location.href = this.value;">
+                                <option value="">Apri il menu e scegli il caso</option>
+                                <option value="#pc-lento">Il PC è diventato lentissimo</option>
+                                <option value="#mail-sospetta">Ho ricevuto una mail sospetta</option>
+                                <option value="#popup-strani">Compaiono popup strani</option>
+                                <option value="#wifi-pubblico">Sono collegato a un Wi-Fi pubblico</option>
+                                <option value="#file-scomparsi">Non trovo più alcuni file</option>
+                                <option value="#password-rischio">Penso che una password sia finita in giro</option>
+                            </select>
+                            <p class="mt-3 mb-0">
+                                Scegli una voce e la pagina ti porta alla mini-guida giusta. Poche mosse, tono tranquillo,
+                                niente panico da tastiera che fuma.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row g-4 mt-1">
+                        <div class="col-md-6">
+                            <article id="pc-lento" class="card h-100 blog-case">
                                 <div class="card-body">
-                                    <h3 class="h4">Non sono un utente esperto</h3>
-                                    <div class="reader-note">
-                                        <em>Per chi usa il computer senza volerci litigare:</em> pensa a una persona che controlla la posta,
-                                        paga una bolletta online o salva le foto di famiglia. Qui servono frasi chiare. Punto. Il geroglifico lo lasciamo agli archeologi.
-                                    </div>
-                                    <p>
-                                        Immagina la sicurezza informatica come chiudere bene casa prima di uscire. Password forti,
-                                        backup e attenzione ai link fanno proprio questo: chiudono porte, finestre e distrazioni.
-                                    </p>
-                                    <p>
-                                        Esempio pratico: arriva una mail che dice "clicca subito o perdi l'account". Tu non corri.
-                                        Guardi mittente e link. Due minuti. Tanti problemi in meno. E il cuore torna a battere normale.
-                                    </p>
-                                    <a class="btn btn-primary hero-btn" href="area-principianti.html">Apri il percorso guidato</a>
+                                    <p class="badge text-bg-primary">Caso 1</p>
+                                    <h3 class="h5">Il PC è diventato lentissimo</h3>
+                                    <p>Prima cosa: non aprire altri dieci programmi per "vedere se passa". Di solito non passa, peggiora e il PC ti guarda male.</p>
+                                    <ol class="mb-0">
+                                        <li>Riavvia il computer.</li>
+                                        <li>Controlla gli aggiornamenti.</li>
+                                        <li>Apri l'antivirus e fai una scansione completa.</li>
+                                        <li>Disinstalla programmi che non riconosci.</li>
+                                    </ol>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article id="mail-sospetta" class="card h-100 blog-case">
+                                <div class="card-body">
+                                    <p class="badge text-bg-primary">Caso 2</p>
+                                    <h3 class="h5">Ho ricevuto una mail sospetta</h3>
+                                    <p>Se ti mette fretta, già parte male. La fretta è il profumo preferito delle truffe online.</p>
+                                    <ol class="mb-0">
+                                        <li>Non cliccare link o allegati.</li>
+                                        <li>Controlla bene il mittente.</li>
+                                        <li>Apri il sito ufficiale scrivendolo tu nel browser.</li>
+                                        <li>Elimina la mail se resta dubbia.</li>
+                                    </ol>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article id="popup-strani" class="card h-100 blog-case">
+                                <div class="card-body">
+                                    <p class="badge text-bg-primary">Caso 3</p>
+                                    <h3 class="h5">Compaiono popup strani</h3>
+                                    <p>Quando una finestra urla "hai 37 virus!", spesso il problema è proprio quella finestra. Educata, zero.</p>
+                                    <ol class="mb-0">
+                                        <li>Chiudi la pagina senza premere sui pulsanti del popup.</li>
+                                        <li>Cancella estensioni del browser che non conosci.</li>
+                                        <li>Fai una scansione antivirus.</li>
+                                        <li>Scarica software solo dai siti ufficiali.</li>
+                                    </ol>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article id="wifi-pubblico" class="card h-100 blog-case">
+                                <div class="card-body">
+                                    <p class="badge text-bg-primary">Caso 4</p>
+                                    <h3 class="h5">Sono collegato a un Wi-Fi pubblico</h3>
+                                    <p>Il Wi-Fi del bar va bene per leggere notizie. Per banca e documenti delicati, meglio aspettare una rete fidata.</p>
+                                    <ol class="mb-0">
+                                        <li>Evita banca, pagamenti e dati sensibili.</li>
+                                        <li>Controlla che i siti inizino con <code>https</code>.</li>
+                                        <li>Disattiva la condivisione file.</li>
+                                        <li>Usa una VPN se devi lavorare fuori casa.</li>
+                                    </ol>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article id="file-scomparsi" class="card h-100 blog-case">
+                                <div class="card-body">
+                                    <p class="badge text-bg-primary">Caso 5</p>
+                                    <h3 class="h5">Non trovo più alcuni file</h3>
+                                    <p>Prima di dichiarare lutto digitale, controlla i posti classici. A volte il file non è sparito, si è solo nascosto malissimo.</p>
+                                    <ol class="mb-0">
+                                        <li>Guarda nel Cestino.</li>
+                                        <li>Cerca il nome del file dal menu Start o Finder.</li>
+                                        <li>Controlla cloud e cartella Download.</li>
+                                        <li>Se hai un backup, recupera la copia più recente.</li>
+                                    </ol>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article id="password-rischio" class="card h-100 blog-case">
+                                <div class="card-body">
+                                    <p class="badge text-bg-primary">Caso 6</p>
+                                    <h3 class="h5">Penso che una password sia finita in giro</h3>
+                                    <p>Qui si agisce subito, ma senza correre a caso. La calma non è lentezza: è mira migliore.</p>
+                                    <ol class="mb-0">
+                                        <li>Cambia la password dell'account coinvolto.</li>
+                                        <li>Se la usavi altrove, cambiala anche lì.</li>
+                                        <li>Attiva il secondo fattore.</li>
+                                        <li>Controlla accessi recenti e dispositivi collegati.</li>
+                                    </ol>
                                 </div>
                             </article>
                         </div>
@@ -172,8 +253,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Prima del virus c'è sempre un percorso: rete, file, memoria, processore. Capirlo aiuta a non cliccare a caso. -->
         <section class="info-band py-5">
             <div class="container">
                 <div class="section-title mb-4">
@@ -217,7 +296,7 @@
                                 <h3 class="h5">La memoria lavora al volo</h3>
                                 <p class="mb-0">
                                     Quando un programma parte, usa la memoria RAM per lavorare. Un malware può infilarsi proprio lì,
-                                    mentre tutto sembra normale. Tipo ospite indesiderato alla festa: nessuno l'ha invitato, ma lui è li e lo sa.
+                                    mentre tutto sembra normale. Tipo ospite indesiderato alla festa: nessuno l'ha invitato, ma lui è lì e lo sa.
                                 </p>
                             </div>
                         </article>
@@ -268,8 +347,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Testimonianze: piccole scene concrete per far vedere che la sicurezza non è un discorso lontano dalla vita normale. -->
         <section class="container my-5">
             <div class="section-title mb-4">
                 <p class="badge text-bg-warning mb-3">Reali testimonianze</p>
@@ -365,8 +442,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Tre assaggi rapidi: non raccontano tutto, ma danno subito il ritmo della guida. Prima orienti il lettore, poi lo porti alle schede. -->
         <section class="info-band py-5">
             <div class="container">
                 <div class="row g-4">
