@@ -1,30 +1,66 @@
 body {
     color: #25313f;
     background-color: #fffaf0;
+    overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+p,
+li,
+a,
+button,
+select,
+code,
+strong {
+    overflow-wrap: anywhere;
+}
+
+.container {
+    width: min(100% - 1.5rem, 1140px);
+}
+
+main > .container,
+main > .info-band {
+    margin-block: clamp(2rem, 5vw, 3.75rem) !important;
+}
+
 .navbar-brand {
     color: #0f766e;
+    white-space: normal;
 }
 
 .navbar {
     background-color: #fff7db !important;
 }
 
+.navbar .container {
+    gap: 0.75rem;
+}
+
+.navbar-nav {
+    gap: 0.15rem;
+}
+
 .hero-section {
     position: relative;
-    min-height: 500px;
+    min-height: clamp(520px, 70vh, 720px);
     color: #ffffff;
     overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
-    height: 500px;
+    height: clamp(520px, 70vh, 720px);
     object-fit: cover;
     display: block;
 }
@@ -40,9 +76,35 @@ html {
     background: rgba(20, 32, 46, 0.48);
 }
 
+.hero-overlay .container {
+    padding-block: clamp(2rem, 6vw, 4rem);
+}
+
+.hero-section .lead {
+    max-width: 66ch;
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+}
+
+.display-5 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.08;
+}
+
 .page-heading {
     background-color: #fef3c7;
     border-bottom: 3px dashed #f59e0b;
+}
+
+.page-heading .container {
+    padding-block: clamp(2rem, 5vw, 3rem) !important;
+}
+
+.page-heading h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.page-heading .lead {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
 }
 
 .card {
@@ -127,12 +189,15 @@ html {
 }
 
 .hero-btn {
-    width: 280px;
+    width: min(100%, 280px);
     min-height: 58px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    white-space: normal;
+    line-height: 1.2;
+    padding-inline: 1rem;
 }
 
 .profile-btn {
@@ -234,6 +299,7 @@ html {
     background-color: #25313f;
     color: #fffdf6;
     border-radius: 8px;
+    overflow-x: auto;
 }
 
 .code-card pre {
@@ -245,25 +311,123 @@ html {
     color: #fde68a;
 }
 
-@media (max-width: 767px) {
-    .hero-section {
-        min-height: 500px;
+@media (min-width: 1400px) {
+    .container {
+        width: min(100% - 3rem, 1280px);
     }
 
+    .hero-overlay .col-lg-7 {
+        max-width: 760px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding-top: 0.75rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding-block: 0.65rem;
+    }
+
+    .hero-section,
     .hero-image {
-        height: 500px;
+        min-height: 640px;
+        height: 640px;
     }
 
     .hero-overlay {
         align-items: flex-end;
-        padding-bottom: 2rem;
+        background: linear-gradient(
+            180deg,
+            rgba(20, 32, 46, 0.32) 0%,
+            rgba(20, 32, 46, 0.78) 100%
+        );
+    }
+
+    .hero-actions > .d-flex {
+        align-items: stretch;
+    }
+
+    .hero-btn {
+        flex: 1 1 260px;
+    }
+
+    .card-body,
+    .check-item,
+    .note-box,
+    .reader-note,
+    .code-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        min-height: auto;
+    }
+
+    .hero-image {
+        height: auto;
+        min-height: 720px;
+    }
+
+    .hero-overlay {
+        align-items: flex-end;
+        padding-bottom: 1rem;
     }
 
     .display-5 {
-        font-size: 2.2rem;
+        font-size: clamp(1.85rem, 10vw, 2.35rem);
     }
 
     .hero-btn {
         width: 100%;
+        min-height: 52px;
+    }
+
+    .hero-actions .d-flex {
+        flex-direction: column;
+    }
+
+    .form-select-lg,
+    .btn-lg {
+        font-size: 1rem;
+    }
+
+    .table-responsive {
+        margin-inline: -0.25rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        width: min(100% - 1rem, 1140px);
+    }
+
+    .navbar-brand {
+        max-width: calc(100vw - 5.5rem);
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        min-height: 780px;
+    }
+
+    .hero-overlay .container {
+        padding-block: 1.25rem;
+    }
+
+    .badge {
+        white-space: normal;
+        text-align: left;
+    }
+
+    .card-body,
+    .check-item,
+    .note-box,
+    .reader-note,
+    .code-card {
+        padding: 0.9rem;
     }
 }
